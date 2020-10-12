@@ -11,7 +11,7 @@ import {
 import Background from "../../img/background.png";
 import IconButton from "@material-ui/core/IconButton";
 import AppBar from "@material-ui/core/AppBar";
-import Logo from "../../img/logo.png";
+import Logo from "../../img/logo.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -167,56 +167,28 @@ function Header() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <AppBar position="sticky" color="transparent">
-        <section>
-          <header className={classes.header}>
-            <div className={classes.logo}>
-              <a href="#">
-                <img src={Logo}></img>
-              </a>
-            </div>
-            <nav id="sidebar" className={classes.sidebar}>
-              <ul>
-                <li>
-                  <a href="https://world-works.co.jp/">
-                    <HomeOutlined className={classes.icon} />
-                    Trang chủ
-                  </a>
-                </li>
-                <li>
-                  <a href="#reason">
-                    <DetailsOutlined className={classes.icon} />
-                    Lý do
-                  </a>
-                </li>
-                <li>
-                  <a href="#impression">
-                    <RecordVoiceOverOutlined className={classes.icon} />
-                    Cảm nhận
-                  </a>
-                </li>
-                <li>
-                  <a href="#entry">
-                    <BusinessCenterOutlined className={classes.icon} />
-                    Ứng tuyển
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            <IconButton
-              onClick={() => {
-                show();
-              }}
-            >
-              <MenuOpenRounded
-                color="primary"
-                className={classes.toggleButton}
-              />
-            </IconButton>
-          </header>
-        </section>
-      </AppBar>
-      <div className={classes.bgImg}></div>
+        <AppBar 
+            position="sticky"
+            color = "transparent"
+        >
+            <section> 
+                <header className={classes.header}>
+                    <div className={classes.logo}><a href = "#"><img src={Logo}></img></a></div>
+                    <nav id = "sidebar" className = {classes.sidebar}>
+                        <ul>
+                            <li><a href="https://world-works.co.jp/"><HomeOutlined className={classes.icon}/>Trang chủ</a></li>
+                            <li><a href="#reason"><DetailsOutlined className={classes.icon} />Lý do</a></li>
+                            <li><a href="#impression"><RecordVoiceOverOutlined className={classes.icon} />Cảm nhận</a></li>
+                            <li><a href="#entry"><BusinessCenterOutlined className={classes.icon} />Ứng tuyển</a></li>
+                        </ul>
+                    </nav>
+                    <IconButton onClick={() => {show();}}>
+                            <MenuOpenRounded  color="primary" className= {classes.toggleButton} />
+                    </IconButton>
+                </header>
+            </section>
+    </AppBar>
+    <div className={classes.bgImg}></div>
     </React.Fragment>
   );
 }
